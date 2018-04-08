@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			*{ 
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+				-webkit-tap-highlight-color: transparent; 
+			}
+			input[type=checkbox] {
+				-webkit-appearance: none;
+				width: .2rem;
+				height: .2rem;
+				border-radius: 50%;
+				border: 1px solid #DDD8CE;
+				text-align: center;
+				vertical-align: middle;
+				line-height: 0.2rem;
+				outline: 0
+			}
+			
+			input[type=checkbox] {
+				border-radius: 50%
+			}
+			
+			input[type=checkbox]:checked {
+				background-color: rgba(0, 173, 216, 1);
+				border: 0;
+				color: #fff
+			}
+			
+			input[type=checkbox]:checked:after {
+				content: "✓";
+				font-size: .2rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="checkbox" checked="checked">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			//px转换为rem
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 600) {
+							docEl.style.fontSize = '160px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 375) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</body>
+
+</html>
