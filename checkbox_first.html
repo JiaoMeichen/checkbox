@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			*{
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			.checkbox_wrap {
+				width: 30px;
+				height: 30px;
+				position: relative;
+				float: left;
+			}
+			
+			.checkbox_wrap input[type=checkbox] {
+				visibility: hidden;
+			}
+			
+			.checkbox_wrap label {
+				cursor: pointer;
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				top: 0;
+				left: 0;
+				background: #fff;
+				border: 2px solid #ccc;
+				-moz-border-radius: 50%;
+				-webkit-border-radius: 50%;
+				border-radius: 50%;
+			}
+			
+			.checkbox_wrap label:after {
+				opacity: 0;
+				content: '';
+				position: absolute;
+				width: 9px;
+				height: 5px;
+				background: transparent;
+				top: 6px;
+				left: 6px;
+				border: 4px solid #fff;
+				border-top: none;
+				border-right: none;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+			
+			.checkbox_wrap input[type=checkbox]:checked+label {
+				background: #f40;
+				border: 2px solid #f40;
+			}
+			
+			.checkbox_wrap input[type=checkbox]:checked+label:after {
+				opacity: 1;
+				background: #f40;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="checkbox_wrap">
+			<input type="checkbox" value="1" id="checkbox1" name="">
+			<label for="checkbox1"></label>
+		</div>
+		<div class="checkbox_wrap">
+			<input type="checkbox" value="1" id="checkbox2" name="">
+			<label for="checkbox2"></label>
+		</div>
+		<div class="checkbox_wrap">
+			<input type="checkbox" value="1" id="checkbox3" name="">
+			<label for="checkbox3"></label>
+		</div>
+		<div class="checkbox_wrap">
+			<input type="checkbox" value="1" id="checkbox4" name="">
+			<label for="checkbox4"></label>
+		</div>
+		<button>提交</button>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script>
+		$("button").on("click",function(){
+			console.log($("input:checkbox:checked").length)
+		})
+	</script>
+
+</html>
